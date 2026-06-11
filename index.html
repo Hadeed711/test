@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini SPA</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <div class="shell">
+      <header class="hero">
+        <p class="eyebrow">Basic test website</p>
+        <h1>Mini SPA</h1>
+        <p class="lead">
+          A tiny single-page app you can open, click through, and modify.
+        </p>
+        <nav class="tabs" aria-label="Primary navigation">
+          <a href="#home" data-route="home">Home</a>
+          <a href="#features" data-route="features">Features</a>
+          <a href="#contact" data-route="contact">Contact</a>
+        </nav>
+      </header>
+
+      <main class="card">
+        <section class="view" data-view="home">
+          <h2>Home</h2>
+          <p>
+            This is a small test SPA with hash-based navigation and no build step.
+          </p>
+          <button id="ctaButton" type="button">Click me</button>
+          <p id="message" class="message">Ready.</p>
+        </section>
+
+        <section class="view" data-view="features" hidden>
+          <h2>Features</h2>
+          <ul>
+            <li>Simple routing with the URL hash</li>
+            <li>Responsive layout</li>
+            <li>Vanilla HTML, CSS, and JavaScript</li>
+          </ul>
+        </section>
+
+        <section class="view" data-view="contact" hidden>
+          <h2>Contact</h2>
+          <p>
+            Test it however you want. If you need more screens, just add another route.
+          </p>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

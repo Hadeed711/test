@@ -1,0 +1,157 @@
+:root {
+  color-scheme: light;
+  --bg: #eef2ff;
+  --bg-accent: #dbeafe;
+  --surface: rgba(255, 255, 255, 0.78);
+  --text: #0f172a;
+  --muted: #475569;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --border: rgba(37, 99, 235, 0.14);
+  --shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.22), transparent 34%),
+    linear-gradient(180deg, var(--bg), #ffffff 65%);
+}
+
+.shell {
+  width: min(920px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 56px;
+}
+
+.hero {
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  color: var(--primary-dark);
+  font-weight: 700;
+}
+
+h1,
+h2,
+p,
+ul {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  margin-bottom: 12px;
+}
+
+.lead {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tabs a,
+button {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.85rem 1.15rem;
+  font: inherit;
+  text-decoration: none;
+  transition: transform 120ms ease, background-color 120ms ease,
+    color 120ms ease, border-color 120ms ease;
+}
+
+.tabs a {
+  color: var(--primary-dark);
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.tabs a.active {
+  color: white;
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+button {
+  color: white;
+  background: var(--primary);
+  border-color: var(--primary);
+  cursor: pointer;
+}
+
+.tabs a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 28px;
+  padding: 28px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.view {
+  animation: fadeIn 160ms ease;
+}
+
+.message {
+  margin-top: 16px;
+  color: var(--muted);
+  min-height: 1.5em;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .shell {
+    width: min(100% - 20px, 920px);
+    padding-top: 20px;
+  }
+
+  .card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .tabs a,
+  button {
+    width: 100%;
+    text-align: center;
+  }
+}
